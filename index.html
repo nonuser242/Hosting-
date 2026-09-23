@@ -1,1 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>My Hosting</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav>
+        <div class="logo">
+            🚀 My Hosting
+        </div>
+
+        <button class="login">
+            Login
+        </button>
+    </nav>
+
+
+    <!-- MAIN -->
+    <main>
+
+        <!-- HERO -->
+        <section class="hero">
+
+            <div class="badge">
+                ⚡ Free Hosting Platform
+            </div>
+
+            <h1>
+                Host Your Bots.
+            </h1>
+
+            <h1 class="pink">
+                Simple & Free.
+            </h1>
+
+            <p>
+                Deploy your Discord bots, Node.js apps,
+                Python projects and more from one simple dashboard.
+            </p>
+
+            <button
+                class="start"
+                onclick="openCreateModal()"
+            >
+                + Create Your First Bot
+            </button>
+
+        </section>
+
+
+        <!-- FEATURES -->
+        <section class="cards">
+
+            <div class="card">
+
+                <div class="icon">
+                    🤖
+                </div>
+
+                <h2>
+                    Discord Bots
+                </h2>
+
+                <p>
+                    Host your Discord bots easily
+                    and manage them from one dashboard.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="icon">
+                    🟢
+                </div>
+
+                <h2>
+                    Monitor
+                </h2>
+
+                <p>
+                    Check your project status,
+                    resources and logs.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="icon">
+                    ⚡
+                </div>
+
+                <h2>
+                    Fast Deploy
+                </h2>
+
+                <p>
+                    Deploy your projects with
+                    a simple and easy interface.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- STATUS -->
+        <div class="status">
+
+            <span class="dot"></span>
+
+            Hosting System Online
+
+        </div>
+
+    </main>
+
+
+    <!-- CREATE PROJECT MODAL -->
+
+    <div
+        class="modal"
+        id="createModal"
+    >
+
+        <div class="modal-box">
+
+            <button
+                class="close-btn"
+                onclick="closeCreateModal()"
+            >
+                ×
+            </button>
+
+
+            <div class="modal-icon">
+                🚀
+            </div>
+
+
+            <h2>
+                Create New Project
+            </h2>
+
+            <p class="modal-subtitle">
+                Choose what you want to host.
+            </p>
+
+
+            <!-- PROJECT NAME -->
+
+            <label>
+                Project Name
+            </label>
+
+            <input
+                id="projectName"
+                type="text"
+                placeholder="My Discord Bot"
+                autocomplete="off"
+            >
+
+
+            <!-- PROJECT TYPE -->
+
+            <label>
+                Project Type
+            </label>
+
+            <select id="projectType">
+
+                <option value="discord">
+                    🤖 Discord Bot
+                </option>
+
+                <option value="node">
+                    🟢 Node.js App
+                </option>
+
+                <option value="python">
+                    🐍 Python Bot
+                </option>
+
+                <option value="web">
+                    🌐 Web App
+                </option>
+
+                <option value="docker">
+                    🐳 Docker
+                </option>
+
+            </select>
+
+
+            <!-- CREATE BUTTON -->
+
+            <button
+                class="create-btn"
+                onclick="createProject()"
+            >
+                Create Project
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <script src="app.js"></script>
+
+</body>
+</html>
