@@ -4,220 +4,382 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>My Hosting</title>
+    <title>BotHost — Free Bot Hosting</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <!-- NAVBAR -->
-    <nav>
-        <div class="logo">
-            🚀 My Hosting
-        </div>
+<!-- =========================
+     SIDEBAR
+========================= -->
 
-        <button class="login">
-            Login
+<aside class="sidebar">
+
+    <div class="brand">
+        <div class="brand-logo">BH</div>
+
+        <div>
+            <h2>BotHost</h2>
+            <span>Free Hosting</span>
+        </div>
+    </div>
+
+    <nav class="nav">
+
+        <button class="nav-item active" onclick="showSection('dashboard', this)">
+            <span>⌂</span>
+            Dashboard
         </button>
+
+        <button class="nav-item" onclick="showSection('projects', this)">
+            <span>◈</span>
+            My Bots
+        </button>
+
+        <button class="nav-item" onclick="openCreateModal()">
+            <span>＋</span>
+            Create Bot
+        </button>
+
     </nav>
 
+    <div class="sidebar-bottom">
 
-    <!-- MAIN -->
-    <main>
+        <div class="server-status">
+            <span class="status-dot"></span>
 
-        <!-- HERO -->
-        <section class="hero">
-
-            <div class="badge">
-                ⚡ Free Hosting Platform
+            <div>
+                <strong>System Online</strong>
+                <small>Control panel ready</small>
             </div>
-
-            <h1>
-                Host Your Bots.
-            </h1>
-
-            <h1 class="pink">
-                Simple & Free.
-            </h1>
-
-            <p>
-                Deploy your Discord bots, Node.js apps,
-                Python projects and more from one simple dashboard.
-            </p>
-
-            <button
-                class="start"
-                onclick="openCreateModal()"
-            >
-                + Create Your First Bot
-            </button>
-
-        </section>
-
-
-        <!-- FEATURES -->
-        <section class="cards">
-
-            <div class="card">
-
-                <div class="icon">
-                    🤖
-                </div>
-
-                <h2>
-                    Discord Bots
-                </h2>
-
-                <p>
-                    Host your Discord bots easily
-                    and manage them from one dashboard.
-                </p>
-
-            </div>
-
-
-            <div class="card">
-
-                <div class="icon">
-                    🟢
-                </div>
-
-                <h2>
-                    Monitor
-                </h2>
-
-                <p>
-                    Check your project status,
-                    resources and logs.
-                </p>
-
-            </div>
-
-
-            <div class="card">
-
-                <div class="icon">
-                    ⚡
-                </div>
-
-                <h2>
-                    Fast Deploy
-                </h2>
-
-                <p>
-                    Deploy your projects with
-                    a simple and easy interface.
-                </p>
-
-            </div>
-
-        </section>
-
-
-        <!-- STATUS -->
-        <div class="status">
-
-            <span class="dot"></span>
-
-            Hosting System Online
-
         </div>
 
-    </main>
-
-
-    <!-- CREATE PROJECT MODAL -->
-
-    <div
-        class="modal"
-        id="createModal"
-    >
-
-        <div class="modal-box">
-
-            <button
-                class="close-btn"
-                onclick="closeCreateModal()"
-            >
-                ×
-            </button>
-
-
-            <div class="modal-icon">
-                🚀
-            </div>
-
-
-            <h2>
-                Create New Project
-            </h2>
-
-            <p class="modal-subtitle">
-                Choose what you want to host.
-            </p>
-
-
-            <!-- PROJECT NAME -->
-
-            <label>
-                Project Name
-            </label>
-
-            <input
-                id="projectName"
-                type="text"
-                placeholder="My Discord Bot"
-                autocomplete="off"
-            >
-
-
-            <!-- PROJECT TYPE -->
-
-            <label>
-                Project Type
-            </label>
-
-            <select id="projectType">
-
-                <option value="discord">
-                    🤖 Discord Bot
-                </option>
-
-                <option value="node">
-                    🟢 Node.js App
-                </option>
-
-                <option value="python">
-                    🐍 Python Bot
-                </option>
-
-                <option value="web">
-                    🌐 Web App
-                </option>
-
-                <option value="docker">
-                    🐳 Docker
-                </option>
-
-            </select>
-
-
-            <!-- CREATE BUTTON -->
-
-            <button
-                class="create-btn"
-                onclick="createProject()"
-            >
-                Create Project
-            </button>
-
+        <div class="version">
+            BotHost v1.0
         </div>
 
     </div>
 
+</aside>
 
-    <script src="app.js"></script>
+
+<!-- =========================
+     MAIN
+========================= -->
+
+<main class="main">
+
+    <!-- TOP BAR -->
+
+    <header class="topbar">
+
+        <div>
+            <h1 id="pageTitle">Dashboard</h1>
+            <p id="pageDescription">
+                Manage your hosted bots and applications.
+            </p>
+        </div>
+
+        <button class="create-button" onclick="openCreateModal()">
+            <span>＋</span>
+            Create Bot
+        </button>
+
+    </header>
+
+
+    <!-- =========================
+         DASHBOARD
+    ========================= -->
+
+    <section id="dashboard" class="section active-section">
+
+        <div class="hero">
+
+            <div class="hero-content">
+
+                <div class="hero-badge">
+                    🚀 FREE BOT HOSTING PANEL
+                </div>
+
+                <h2>
+                    Host your bots.
+                    <span>Simple.</span>
+                </h2>
+
+                <p>
+                    Create and manage Discord bots, Node.js apps,
+                    Python bots and more from one simple dashboard.
+                </p>
+
+                <button class="hero-button" onclick="openCreateModal()">
+                    Create your first bot
+                    <span>→</span>
+                </button>
+
+            </div>
+
+            <div class="hero-art">
+                <div class="server-icon">
+                    🤖
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- STATS -->
+
+        <div class="stats">
+
+            <div class="stat-card">
+
+                <div class="stat-icon pink">
+                    ◈
+                </div>
+
+                <div>
+                    <span>Total Projects</span>
+                    <strong id="totalProjects">0</strong>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon green">
+                    ●
+                </div>
+
+                <div>
+                    <span>Running</span>
+                    <strong id="runningProjects">0</strong>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon orange">
+                    ◷
+                </div>
+
+                <div>
+                    <span>Stopped</span>
+                    <strong id="stoppedProjects">0</strong>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon blue">
+                    ⚡
+                </div>
+
+                <div>
+                    <span>Hosting</span>
+                    <strong>FREE</strong>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- PROJECT PREVIEW -->
+
+        <div class="content-card">
+
+            <div class="card-header">
+
+                <div>
+                    <h3>My Bots</h3>
+                    <p>Your hosted projects appear here.</p>
+                </div>
+
+                <button class="small-button" onclick="openCreateModal()">
+                    + New Bot
+                </button>
+
+            </div>
+
+            <div id="dashboardProjects" class="projects-container">
+
+                <div class="empty-state">
+
+                    <div class="empty-icon">
+                        🤖
+                    </div>
+
+                    <h3>No bots yet</h3>
+
+                    <p>
+                        Create your first bot to get started.
+                    </p>
+
+                    <button onclick="openCreateModal()">
+                        + Create Bot
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         PROJECTS
+    ========================= -->
+
+    <section id="projects" class="section">
+
+        <div class="section-heading">
+
+            <div>
+                <h2>My Bots</h2>
+
+                <p>
+                    Manage all your projects.
+                </p>
+            </div>
+
+            <button class="create-button" onclick="openCreateModal()">
+                ＋ Create Bot
+            </button>
+
+        </div>
+
+        <div id="allProjects" class="projects-grid">
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+<!-- =========================
+     CREATE MODAL
+========================= -->
+
+<div id="createModal" class="modal">
+
+    <div class="modal-box">
+
+        <button class="modal-close" onclick="closeCreateModal()">
+            ×
+        </button>
+
+        <div class="modal-icon">
+            🤖
+        </div>
+
+        <h2>Create New Bot</h2>
+
+        <p>
+            Choose a name and select what you want to host.
+        </p>
+
+
+        <label for="projectName">
+            Bot / Project Name
+        </label>
+
+        <input
+            type="text"
+            id="projectName"
+            placeholder="Example: MyMusicBot"
+            maxlength="40"
+            autocomplete="off"
+        >
+
+
+        <label for="projectType">
+            Project Type
+        </label>
+
+        <select id="projectType">
+
+            <option value="">
+                Select project type
+            </option>
+
+            <option value="discord">
+                🤖 Discord Bot
+            </option>
+
+            <option value="node">
+                🟢 Node.js App
+            </option>
+
+            <option value="python">
+                🐍 Python Bot
+            </option>
+
+            <option value="web">
+                🌐 Web App
+            </option>
+
+            <option value="docker">
+                🐳 Docker
+            </option>
+
+        </select>
+
+
+        <div id="createError" class="form-error"></div>
+
+
+        <button
+            class="modal-create"
+            onclick="createProject()"
+        >
+            Create Project
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     PROJECT DETAILS MODAL
+========================= -->
+
+<div id="detailsModal" class="modal">
+
+    <div class="modal-box details-box">
+
+        <button class="modal-close" onclick="closeDetailsModal()">
+            ×
+        </button>
+
+        <div id="detailsContent"></div>
+
+    </div>
+
+</div>
+
+
+<!-- TOAST -->
+
+<div id="toast" class="toast">
+    <span id="toastIcon">✓</span>
+    <span id="toastMessage">Done</span>
+</div>
+
+
+<script src="app.js"></script>
 
 </body>
 </html>
